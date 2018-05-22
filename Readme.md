@@ -2,22 +2,22 @@
 
 ------
 
-###查看进程 
+### 查看进程 
 ```shell
 ps -ef |grep jetty  
 ps aux |grep java
 ```
 
-###批量杀死java进程
+### 批量杀死java进程
 ```shell
 pkill java
 ```
-###杀死进程
+### 杀死进程
 ```shell
 kill -9 42947
 ```
 
-###查看性能问题
+### 查看性能问题
 日志
 堆栈
 jmap
@@ -45,7 +45,7 @@ jmap  histro:current pid   查看现在内存对象实例
 >>  //不清空，写入
 ```
 
-###查看性能问题2
+### 查看性能问题2
 1，使用命令top -p <pid> ，显示你的java进程的内存情况，pid是你的java进程号，比如123
 2，按H，获取每个线程的内存情况
 3，找到内存和cpu占用最高的线程pid，比如15248
@@ -56,7 +56,7 @@ jmap  histro:current pid   查看现在内存对象实例
 JVM性能调优监控工具jps、jstack、jmap、jhat、jstat、hprof使用详解
 https://my.oschina.net/feichexia/blog/196575
 
-###查询端口号
+### 查询端口号
 ```shell
 lsof -i tcp:port 
 lsof -i:8080
@@ -65,10 +65,10 @@ lsof -i:8080
 netstat -plten |grep java
 ssh root@gamebox-tomcat-online011-jylt.qiyi.virtual -i /路径/id_rsa
 ```
-####Linux – Which application is using port 8080
+### #Linux – Which application is using port 8080
 http://www.mkyong.com/linux/linux-which-application-is-using-port-8080/
 
-###查看命令历史使用记录并通过less分页显示
+### 查看命令历史使用记录并通过less分页显示
 ```shell
 history | less
 ```
@@ -80,19 +80,19 @@ find        //实际搜寻硬盘查询文件名称。
 ```
 
 
-###查看当前机器ip
+### 查看当前机器ip
 ```shell
 ip address show
 ```
 
-###查看日志
+### 查看日志
 tail
 more
 head
 grep
 vi
 
-###查看代码log日志
+### 查看代码log日志
 ```shell
 find . -name "*.log"
 find . -type f -name "*.log"
@@ -103,7 +103,7 @@ find . -name "server.xml"
 tail -f |grep exception ./data/logs/xxx.log 
 ```
 
-###根据关键字查询日志
+### 根据关键字查询日志
 ```shell
 tail -f  ./data/logs/xxx.log   | grep 7370 -i -A 20
 tail -f  ./data/logs/xxx.log  | grep exception -i -A 20
@@ -111,14 +111,14 @@ tail -f  ./data/logs/xxx.log |grep ???
 tail -f  xxx.log  | grep exception -i -A 20
 ```
 
-###查看实时日志
+### 查看实时日志
 ```shell
 tail -f  ./data/logs/xxx.log | grep exception -i -A 20
 tail -f  ./data/logs/xxx.log | grep AbstractGCController -i -A 20 --color
 tail -f  ./data/logs/xxx.log | grep AbstractGCController -i -C 20 --color
 ```
 
-###-d表示高亮不同的地方，-n表示多少秒刷新一次。
+### -d表示高亮不同的地方，-n表示多少秒刷新一次。
 ```shell
 watch -d -n 5 cat xxx.log
 tail -n 1000        //显示最后1000行
@@ -131,7 +131,7 @@ grep -C 5       //可以显示匹配内容以及前后面的5行内容
 grep -i         //不区分大小写
 ```
 
-###自动给grep加颜色
+### 自动给grep加颜色
 ```shell
 1. vim ~/.bashrc   
 2. alias grep='grep --color'  
@@ -142,7 +142,7 @@ grep -i ’/gamecenter/top/rankNew/’xxx.log
 ```
 
 
-###tomcat日志
+### tomcat日志
 
 查找日志所在目录
 ```shell
@@ -187,7 +187,7 @@ grep -i 'JAVA_OPTS' catalina.sh
 
 其中JAVA_OPTS 设置了jvm参数
 
-###find命令
+### find命令
 ```shell
 find . -name "*.log"
 find . -type f -name "*.log"
@@ -195,7 +195,7 @@ find . -name “*tomcat*”
 find . -name "server.xml"
 ```
 
-###vi
+### vi
 ```shell
 vi catalina.out
 ```
@@ -208,7 +208,7 @@ win+ b 屏幕『向上』移动一页，相当于 [Page Up] 按键
 Shift + g 跳到文件最后一行
 
 
-###查找指定文件的关键词
+### 查找指定文件的关键词
 ```shell
 grep -i 'ERROR' catalina.out
 grep -i ’17:20:’ catalina.out
